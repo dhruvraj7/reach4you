@@ -61,7 +61,7 @@ export default function Navbar({ currentPage, setCurrentPage }) {
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-full border border-slate-200/70 shadow-xs">
             {navLinks.map((link) => {
-              const isActive = currentPage === link.id;
+              const isActive = currentPage === link.id || (link.id === 'blog' && typeof currentPage === 'string' && currentPage.startsWith('blog/'));
               return (
                 <button
                   key={link.id}
@@ -107,7 +107,7 @@ export default function Navbar({ currentPage, setCurrentPage }) {
         <div className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-4 py-5 shadow-2xl animate-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => {
-              const isActive = currentPage === link.id;
+              const isActive = currentPage === link.id || (link.id === 'blog' && typeof currentPage === 'string' && currentPage.startsWith('blog/'));
               return (
                 <button
                   key={link.id}
