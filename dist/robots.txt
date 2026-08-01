@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://reach4you.agency/sitemap.xml
