@@ -43,22 +43,22 @@ export default function Home({ setCurrentPage }) {
       title: "SaaS Product Launch Campaign",
       niche: "Multi-Subreddit Campaign",
       metrics: [
-        { label: "Total Reddit Views", value: "20,000+", icon: Eye },
-        { label: "Total Organic Upvotes", value: "100+", icon: ThumbsUp },
-        { label: "Posts & Comments Published", value: "15+", icon: MessageSquare },
-        { label: "Contributors Participated", value: "8+", icon: Users }
+        { label: "Organic Reddit Views", value: "30,000+", icon: Eye },
+        { label: "Organic Upvotes", value: "100+", icon: ThumbsUp },
+        { label: "Posts & Comments Published", value: "20+", icon: MessageSquare },
+        { label: "Active Reddit Contributors", value: "30+", icon: Users }
       ],
       details: "Campaign executed through authentic Reddit posts and comments distributed across multiple relevant subreddits."
     },
     {
-      badge: "Completed Reddit Campaign",
+      badge: "SaaS Growth Campaign",
       title: "B2B SaaS Growth Campaign",
       niche: "Multi-Subreddit Campaign",
       metrics: [
-        { label: "Total Reddit Views", value: "45,000+", icon: Eye },
-        { label: "Total Organic Upvotes", value: "250+", icon: ThumbsUp },
+        { label: "Organic Reddit Views", value: "40,000+", icon: Eye },
+        { label: "Organic Upvotes", value: "120+", icon: ThumbsUp },
         { label: "Posts & Comments Published", value: "30+", icon: MessageSquare },
-        { label: "Contributors Participated", value: "14+", icon: Users }
+        { label: "Active Reddit Contributors", value: "40+", icon: Users }
       ],
       details: "Multi-thread SaaS growth campaign distributed across targeted productivity, software, and founder subreddits."
     }

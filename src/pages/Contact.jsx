@@ -22,20 +22,20 @@ export default function Contact() {
 
   return (
     <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
-        
+
         {/* =========================================================================
             LEFT INFORMATION PANEL (PREMIUM RE-DESIGN)
             ========================================================================= */}
         <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
           <div className="bg-slate-950 text-white rounded-3xl p-8 sm:p-10 border border-slate-800 shadow-2xl space-y-8 flex-grow relative overflow-hidden">
-            
+
             {/* Subtle Ambient Orange Aura */}
             <div className="absolute top-0 right-0 w-72 h-72 bg-[#FF4500]/15 blur-3xl rounded-full pointer-events-none"></div>
 
             <div className="relative z-10 space-y-6">
-              
+
               {/* Panel Header */}
               <div className="space-y-2 border-b border-slate-800/80 pb-6">
                 <span className="px-3 py-1 rounded-full bg-orange-950/80 text-[#FF4500] border border-orange-800/60 text-xs font-extrabold uppercase tracking-wide">
@@ -78,8 +78,8 @@ export default function Contact() {
             <div className="relative z-10 pt-4 border-t border-slate-800/80 flex items-center justify-between">
               <div className="space-y-1">
                 <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Direct Email Inquiry</p>
-                <a 
-                  href="mailto:reach4you2@gmail.com" 
+                <a
+                  href="mailto:reach4you2@gmail.com"
                   className="text-sm font-extrabold text-[#FF4500] hover:underline flex items-center gap-1.5"
                 >
                   <Mail className="w-4 h-4" />
@@ -103,8 +103,11 @@ export default function Contact() {
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New Campaign Inquiry" />
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value={typeof window !== 'undefined' ? `${window.location.origin}/thank-you` : 'https://reach4you.agency/thank-you'} />
-              
+              <input
+                type="hidden"
+                name="_next"
+                value="https://reach4you.vercel.app/"
+              />
               {/* Header Badge & Title */}
               <div className="space-y-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 text-[#FF4500] border border-orange-200/60 text-[11px] font-extrabold uppercase tracking-wider">
@@ -121,7 +124,7 @@ export default function Contact() {
 
               {/* Simplified 5 Form Fields */}
               <div className="space-y-4 pt-2">
-                
+
                 {/* Field 1: Full Name */}
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Full Name</label>
@@ -200,7 +203,7 @@ export default function Contact() {
                   Request My Campaign
                 </Button>
               </div>
-              
+
               <p className="text-[11px] text-slate-500 text-center font-medium">
                 Submissions are sent directly to <span className="font-bold text-slate-800">reach4you2@gmail.com</span>
               </p>

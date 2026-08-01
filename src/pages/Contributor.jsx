@@ -9,8 +9,8 @@ export default function Contributor({ setCurrentPage }) {
     fullName: '',
     emailAddress: '',
     phoneNumber: '',
-    age: '',
     redditUsername: '',
+    redditAccountAge: '',
     totalKarma: ''
   });
 
@@ -90,7 +90,7 @@ export default function Contributor({ setCurrentPage }) {
               />
             </div>
 
-            {/* Field 2: Email Address (Directly below Full Name) */}
+            {/* Field 2: Email Address */}
             <div>
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address</label>
               <input
@@ -118,23 +118,7 @@ export default function Contributor({ setCurrentPage }) {
               />
             </div>
 
-            {/* Field 4: Age */}
-            <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Age</label>
-              <input
-                type="number"
-                name="age"
-                required
-                min="18"
-                max="99"
-                placeholder="25"
-                value={formData.age}
-                onChange={(e) => setFormData({ ...formData, age: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
-              />
-            </div>
-
-            {/* Field 5: Reddit Username */}
+            {/* Field 4: Reddit Username */}
             <div>
               <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Reddit Username</label>
               <input
@@ -144,6 +128,20 @@ export default function Contributor({ setCurrentPage }) {
                 placeholder="u/yourusername"
                 value={formData.redditUsername}
                 onChange={(e) => setFormData({ ...formData, redditUsername: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
+              />
+            </div>
+
+            {/* Field 5: Reddit Account Age */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Reddit Account Age</label>
+              <input
+                type="text"
+                name="redditAccountAge"
+                required
+                placeholder="Example: 4 years"
+                value={formData.redditAccountAge}
+                onChange={(e) => setFormData({ ...formData, redditAccountAge: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
               />
             </div>
