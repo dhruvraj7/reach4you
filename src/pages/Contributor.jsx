@@ -5,7 +5,6 @@ import Button from '../components/common/Button';
 import { Users, ShieldCheck, DollarSign, Award, CheckCircle2, Send } from 'lucide-react';
 
 export default function Contributor({ setCurrentPage }) {
-  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     emailAddress: '',
@@ -14,24 +13,6 @@ export default function Contributor({ setCurrentPage }) {
     redditUsername: '',
     totalKarma: ''
   });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Construct Mailto payload targeting reach4you2@gmail.com with all 6 fields
-    const subject = encodeURIComponent(`New Contributor Application: ${formData.fullName}`);
-    const body = encodeURIComponent(
-      `Full Name: ${formData.fullName}\n` +
-      `Email Address: ${formData.emailAddress}\n` +
-      `Phone Number: ${formData.phoneNumber}\n` +
-      `Age: ${formData.age}\n` +
-      `Reddit Username: ${formData.redditUsername}\n` +
-      `Total Reddit Karma: ${formData.totalKarma}`
-    );
-    
-    window.location.href = `mailto:reach4you2@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-  };
 
   return (
     <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -90,113 +71,107 @@ export default function Contributor({ setCurrentPage }) {
             </p>
           </div>
 
-          {submitted ? (
-            <div className="text-center py-10 space-y-4">
-              <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-md">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-extrabold text-slate-950">Application received successfully!</h3>
-              <p className="text-slate-600 text-xs max-w-md mx-auto leading-relaxed font-normal">
-                Our team will review your Reddit profile and contact you by email within 48 hours if you're shortlisted.
-              </p>
-              <Button onClick={() => setSubmitted(false)} variant="outline" className="text-xs mt-4 font-bold">
-                Submit Another Application
+          <form action="https://formsubmit.co/reach4you2@gmail.com" method="POST" className="space-y-5">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New Contributor Application" />
+            <input type="hidden" name="_template" value="table" />
+            
+            {/* Field 1: Full Name */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Full Name</label>
+              <input
+                type="text"
+                name="fullName"
+                required
+                placeholder="John Doe"
+                value={formData.fullName}
+                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
+              />
+            </div>
+
+            {/* Field 2: Email Address (Directly below Full Name) */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address</label>
+              <input
+                type="email"
+                name="emailAddress"
+                required
+                placeholder="yourname@example.com"
+                value={formData.emailAddress}
+                onChange={(e) => setFormData({ ...formData, emailAddress: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
+              />
+            </div>
+
+            {/* Field 3: Phone Number */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Phone Number</label>
+              <input
+                type="tel"
+                name="phoneNumber"
+                required
+                placeholder="+1 (555) 000-0000"
+                value={formData.phoneNumber}
+                onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
+              />
+            </div>
+
+            {/* Field 4: Age */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Age</label>
+              <input
+                type="number"
+                name="age"
+                required
+                min="18"
+                max="99"
+                placeholder="25"
+                value={formData.age}
+                onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
+              />
+            </div>
+
+            {/* Field 5: Reddit Username */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Reddit Username</label>
+              <input
+                type="text"
+                name="redditUsername"
+                required
+                placeholder="u/yourusername"
+                value={formData.redditUsername}
+                onChange={(e) => setFormData({ ...formData, redditUsername: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
+              />
+            </div>
+
+            {/* Field 6: Total Reddit Karma */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Total Reddit Karma</label>
+              <input
+                type="text"
+                name="totalKarma"
+                required
+                placeholder="e.g. 5,000 karma"
+                value={formData.totalKarma}
+                onChange={(e) => setFormData({ ...formData, totalKarma: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
+              />
+            </div>
+
+            <div className="pt-2">
+              <Button type="submit" icon={Send} className="w-full py-3.5 text-xs font-bold">
+                Submit Application
               </Button>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
-              
-              {/* Field 1: Full Name */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Full Name</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="John Doe"
-                  value={formData.fullName}
-                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
-                />
-              </div>
 
-              {/* Field 2: Email Address (Directly below Full Name) */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address</label>
-                <input
-                  type="email"
-                  required
-                  placeholder="yourname@example.com"
-                  value={formData.emailAddress}
-                  onChange={(e) => setFormData({ ...formData, emailAddress: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
-                />
-              </div>
-
-              {/* Field 3: Phone Number */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="+1 (555) 000-0000"
-                  value={formData.phoneNumber}
-                  onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
-                />
-              </div>
-
-              {/* Field 4: Age */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Age</label>
-                <input
-                  type="number"
-                  required
-                  min="18"
-                  max="99"
-                  placeholder="25"
-                  value={formData.age}
-                  onChange={(e) => setFormData({ ...formData, age: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
-                />
-              </div>
-
-              {/* Field 5: Reddit Username */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Reddit Username</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="u/yourusername"
-                  value={formData.redditUsername}
-                  onChange={(e) => setFormData({ ...formData, redditUsername: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
-                />
-              </div>
-
-              {/* Field 6: Total Reddit Karma */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Total Reddit Karma</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g. 5,000 karma"
-                  value={formData.totalKarma}
-                  onChange={(e) => setFormData({ ...formData, totalKarma: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30"
-                />
-              </div>
-
-              <div className="pt-2">
-                <Button type="submit" icon={Send} className="w-full py-3.5 text-xs font-bold">
-                  Submit Application
-                </Button>
-              </div>
-
-              <p className="text-[11px] text-slate-400 text-center font-medium">
-                Submissions are sent directly to reach4you2@gmail.com
-              </p>
-            </form>
-          )}
+            <p className="text-[11px] text-slate-400 text-center font-medium">
+              Submissions are sent directly to reach4you2@gmail.com
+            </p>
+          </form>
         </Card>
       </div>
 
