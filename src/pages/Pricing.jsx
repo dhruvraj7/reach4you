@@ -2,67 +2,61 @@ import React from 'react';
 import Badge from '../components/common/Badge';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
-import { Check, Flame, ArrowUpRight, Clock, ShieldCheck, Mail, FileText, CreditCard, Sparkles } from 'lucide-react';
+import { Check, Flame, ArrowUpRight, Clock, ShieldCheck, Mail, FileText, CreditCard, Sparkles, Rocket } from 'lucide-react';
 
 export default function Pricing({ setCurrentPage }) {
   const pricingTiers = [
     {
       name: 'Starter Reddit Campaign',
-      price: '$400',
+      price: '$300',
       period: 'Per Campaign',
       tag: 'Starter Package',
       desc: 'Ideal for early-stage SaaS tools, AI apps, and startups looking to launch their initial multi-subreddit presence.',
       deliverables: [
-        '20 Reddit Comments',
-        '2 Reddit Posts',
-        'Distributed across multiple relevant subreddits',
-        'Subreddits of all sizes carefully chosen for your niche',
-        '50+ vetted Reddit contributor execution',
-        '100% human posts & comments (Zero bots)',
-        '7-Day Live Guarantee (Payment based on posts live for 7+ days)'
+        '20 Reddit Posts & Comments',
+        'Multi-Subreddit Distribution',
+        '30+ Active Reddit Contributors',
+        '100% Human Posting',
+        '7-Day Live Guarantee'
       ]
     },
     {
       name: 'Growth & Launch Campaign',
-      price: '$600',
+      price: '$500',
       period: 'Per Campaign',
       popular: true,
       tag: 'Most Popular',
       desc: 'Designed for scaling startups, gaming projects, and products launching new features across targeted subreddits.',
       deliverables: [
-        '35 Reddit Comments',
-        '3 Reddit Posts',
-        'Distributed across multiple relevant subreddits',
-        'Subreddits of all sizes carefully chosen for your niche',
-        '50+ vetted Reddit contributor execution',
-        '100% human posts & comments (Zero bots)',
-        '7-Day Live Guarantee (Payment based on posts live for 7+ days)'
+        '35 Reddit Posts & Comments',
+        'Multi-Subreddit Distribution',
+        '40+ Active Reddit Contributors',
+        '100% Human Posting',
+        '7-Day Live Guarantee'
       ]
     },
     {
       name: 'Enterprise Reddit Campaign',
-      price: '$1,000',
+      price: '$900',
       period: 'Per Campaign',
       tag: 'Maximum Impact',
       desc: 'For high-volume brands and established companies seeking extensive multi-subreddit discussion coverage.',
       deliverables: [
-        '70 Reddit Comments',
-        '7 Reddit Posts',
-        'Distributed across multiple relevant subreddits',
-        'Subreddits of all sizes carefully chosen for your niche',
-        '50+ vetted Reddit contributor execution',
-        '100% human posts & comments (Zero bots)',
-        '7-Day Live Guarantee (Payment based on posts live for 7+ days)'
+        '70 Reddit Posts & Comments',
+        'Multi-Subreddit Distribution',
+        '50+ Active Reddit Contributors',
+        'Priority Campaign Execution',
+        '100% Human Posting',
+        '7-Day Live Guarantee'
       ]
     }
   ];
 
   const paymentTermsPoints = [
     "50% advance payment is required before campaign execution begins.",
-    "The remaining 50% is payable after all agreed Reddit posts and comments have remained live for at least 7 consecutive days.",
-    "If any agreed deliverable is removed within the 7-day guarantee period, Reach4You will replace it at no additional cost.",
-    "Campaign work begins only after the advance payment has been received.",
-    "All campaigns are executed according to the selected package."
+    "The remaining 50% is payable after all agreed Reddit posts and comments remain live for at least 7 consecutive days.",
+    "If any agreed deliverable is removed within the guarantee period, Reach4You will replace it at no additional cost.",
+    "Campaign execution begins only after the advance payment has been received."
   ];
 
   return (
@@ -76,6 +70,18 @@ export default function Pricing({ setCurrentPage }) {
         </h1>
         <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
           Simple, transparent per-campaign packages tailored to your brand goals. Payment is based on Reddit posts and comments that remain live on Reddit for at least 7 consecutive days.
+        </p>
+      </div>
+
+      {/* Founder Pricing Banner */}
+      <div className="max-w-3xl mx-auto p-6 rounded-3xl bg-slate-900/90 border border-orange-500/30 text-white text-center space-y-2 shadow-xl backdrop-blur-md relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-48 h-48 bg-[#FF4500]/10 blur-2xl rounded-full pointer-events-none"></div>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-950/80 text-[#FF4500] border border-orange-800/60 text-xs font-extrabold uppercase tracking-wide">
+          <Rocket className="w-3.5 h-3.5 text-[#FF4500]" />
+          <span>🚀 Founder Pricing</span>
+        </div>
+        <p className="text-xs sm:text-sm text-slate-300 font-medium max-w-xl mx-auto leading-relaxed pt-1">
+          For a limited time, early clients receive discounted campaign pricing while we continue expanding our portfolio and case studies.
         </p>
       </div>
 
@@ -115,7 +121,7 @@ export default function Pricing({ setCurrentPage }) {
                 {tier.deliverables.map((f, fi) => (
                   <li key={fi} className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-[#FF4500] shrink-0 mt-0.5" />
-                    <span className={fi < 2 ? "font-bold text-slate-950" : ""}>{f}</span>
+                    <span className={fi === 0 ? "font-bold text-slate-950" : ""}>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -133,7 +139,7 @@ export default function Pricing({ setCurrentPage }) {
         ))}
       </div>
 
-      {/* NEW SECTION: PAYMENT TERMS CARD */}
+      {/* PAYMENT TERMS CARD */}
       <section className="max-w-4xl mx-auto">
         <Card hover={false} className="p-8 sm:p-10 bg-white border-slate-200 shadow-xl rounded-3xl space-y-6">
           
@@ -148,7 +154,7 @@ export default function Pricing({ setCurrentPage }) {
             </div>
           </div>
 
-          {/* 5 Bullet Points */}
+          {/* 4 Bullet Points */}
           <ul className="space-y-4">
             {paymentTermsPoints.map((point, pIdx) => (
               <li key={pIdx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">
@@ -159,21 +165,6 @@ export default function Pricing({ setCurrentPage }) {
               </li>
             ))}
           </ul>
-
-          {/* Small Note at Bottom */}
-          <div className="pt-5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600 bg-slate-50 p-4 rounded-2xl">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#FF4500] shrink-0" />
-              <span className="font-bold text-slate-900">Need a custom campaign?</span>
-            </div>
-            <a 
-              href="mailto:reach4you2@gmail.com" 
-              className="font-bold text-[#FF4500] hover:underline flex items-center gap-1.5"
-            >
-              <Mail className="w-3.5 h-3.5" />
-              <span>Contact us at reach4you2@gmail.com for a personalized quote</span>
-            </a>
-          </div>
 
         </Card>
       </section>
