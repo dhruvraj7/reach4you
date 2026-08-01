@@ -27,7 +27,7 @@ export default function App() {
       },
       pricing: {
         title: 'Transparent Pricing | Reach4You Agency',
-        description: 'Simple, transparent monthly pricing tiers: Starter ($400/mo), Growth & Launch ($600/mo), Enterprise ($1000/mo). Live 5+ day post guarantee.',
+        description: 'Simple, transparent monthly pricing tiers: Starter ($400/mo), Growth & Launch ($600/mo), Enterprise ($1000/mo). 7-Day Live Guarantee.',
         path: '/pricing'
       },
       blog: {

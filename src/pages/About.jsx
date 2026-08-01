@@ -80,9 +80,9 @@ export default function About({ setCurrentPage }) {
             <div className="w-10 h-10 rounded-xl bg-orange-500/20 text-[#FF4500] flex items-center justify-center font-bold">
               <Clock className="w-5 h-5" />
             </div>
-            <h3 className="text-lg font-bold text-white">Live 5+ Day Guarantee</h3>
+            <h3 className="text-lg font-bold text-white">7-Day Live Guarantee</h3>
             <p className="text-xs text-slate-400 leading-relaxed font-normal">
-              Payment is based on agreed package deliverables, with all posts and comments guaranteed to remain live for at least five days.
+              Payment is based on agreed package deliverables, with all posts and comments guaranteed to remain live for at least 7 consecutive days.
             </p>
           </div>
         </div>

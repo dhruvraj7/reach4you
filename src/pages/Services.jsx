@@ -197,7 +197,11 @@ export default function Services({ setCurrentPage }) {
           <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-slate-500">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#FF4500]" />
-              50+ Vetted Contributors
+              50+ Active Reddit Contributors
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-[#FF4500]" />
+              Multi-Subreddit Campaigns
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#FF4500]" />

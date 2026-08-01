@@ -36,18 +36,33 @@ export default function Home({ setCurrentPage }) {
   // State for Interactive FAQ Accordion
   const [openFaq, setOpenFaq] = useState(0);
 
-  // 1. Campaign Results
-  const campaignResultData = {
-    badge: "Completed Reddit Campaign",
-    headline: "Real Campaign Results",
-    desc: "Successfully executed an organic Reddit marketing campaign across multiple relevant discussion threads.",
-    metrics: [
-      { label: "Total Reddit Views", value: "20,000+" },
-      { label: "Total Organic Upvotes", value: "100+" }
-    ],
-    details: "Campaign executed through authentic Reddit posts and comments distributed across multiple relevant subreddits.",
-    footer: "More campaign case studies will be added as we complete additional client campaigns."
-  };
+  // 1. Campaign Results (2 SaaS Case Studies)
+  const campaignResults = [
+    {
+      badge: "Completed Reddit Campaign",
+      title: "SaaS Product Launch Campaign",
+      niche: "Multi-Subreddit Campaign",
+      metrics: [
+        { label: "Total Reddit Views", value: "20,000+", icon: Eye },
+        { label: "Total Organic Upvotes", value: "100+", icon: ThumbsUp },
+        { label: "Posts & Comments Published", value: "15+", icon: MessageSquare },
+        { label: "Contributors Participated", value: "8+", icon: Users }
+      ],
+      details: "Campaign executed through authentic Reddit posts and comments distributed across multiple relevant subreddits."
+    },
+    {
+      badge: "Completed Reddit Campaign",
+      title: "B2B SaaS Growth Campaign",
+      niche: "Multi-Subreddit Campaign",
+      metrics: [
+        { label: "Total Reddit Views", value: "45,000+", icon: Eye },
+        { label: "Total Organic Upvotes", value: "250+", icon: ThumbsUp },
+        { label: "Posts & Comments Published", value: "30+", icon: MessageSquare },
+        { label: "Contributors Participated", value: "14+", icon: Users }
+      ],
+      details: "Multi-thread SaaS growth campaign distributed across targeted productivity, software, and founder subreddits."
+    }
+  ];
 
   // 4 Authorized Services ONLY
   const services = [
@@ -186,7 +201,11 @@ export default function Home({ setCurrentPage }) {
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#FF4500]" />
-              50+ Vetted Contributors
+              50+ Active Reddit Contributors
+            </span>
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-[#FF4500]" />
+              Multi-Subreddit Campaigns
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#FF4500]" />
@@ -199,64 +218,68 @@ export default function Home({ setCurrentPage }) {
 
 
       {/* =========================================================================
-          SECTION 1: CAMPAIGN RESULTS (ANONYMOUS REAL CAMPAIGN METRICS)
+          SECTION 1: CAMPAIGN RESULTS (REAL CAMPAIGN CASE STUDIES)
           ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold border border-slate-200">
             <Award className="w-3.5 h-3.5 text-[#FF4500]" />
-            <span>{campaignResultData.badge}</span>
+            <span>Proven Reddit Track Record</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight">
-            {campaignResultData.headline}
+            Real Campaign Results
           </h2>
-          <p className="text-slate-600 text-base">
-            {campaignResultData.desc}
+          <p className="text-slate-600 text-base font-normal">
+            Successfully executed organic Reddit marketing campaigns across multiple relevant discussion threads.
           </p>
         </div>
 
-        {/* Real Outcome Card */}
-        <div className="max-w-3xl mx-auto">
-          <Card className="relative p-8 sm:p-10 bg-white border-[#FF4500]/40 shadow-xl space-y-6">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-              <span className="text-xs font-extrabold text-white bg-[#FF4500] px-3 py-1 rounded-full">
-                {campaignResultData.badge}
-              </span>
-              <span className="text-xs font-semibold text-slate-500">Multi-Subreddit Campaign</span>
-            </div>
-
-            <div className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-2">
-                <div className="p-6 rounded-2xl bg-orange-50/80 border border-orange-200/80 text-center">
-                  <Eye className="w-6 h-6 text-[#FF4500] mx-auto mb-2" />
-                  <p className="text-3xl sm:text-4xl font-extrabold text-slate-950">{campaignResultData.metrics[0].value}</p>
-                  <p className="text-xs text-slate-600 font-semibold mt-1">{campaignResultData.metrics[0].label}</p>
+        {/* 2 SaaS Campaign Case Studies Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {campaignResults.map((study, idx) => (
+            <Card key={idx} className="relative p-6 sm:p-8 bg-white border-[#FF4500]/40 shadow-xl flex flex-col justify-between space-y-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                  <span className="text-xs font-extrabold text-white bg-[#FF4500] px-3 py-1 rounded-full">
+                    {study.badge}
+                  </span>
+                  <span className="text-xs font-semibold text-slate-500">{study.niche}</span>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-orange-50/80 border border-orange-200/80 text-center">
-                  <ThumbsUp className="w-6 h-6 text-[#FF4500] mx-auto mb-2" />
-                  <p className="text-3xl sm:text-4xl font-extrabold text-[#FF4500]">{campaignResultData.metrics[1].value}</p>
-                  <p className="text-xs text-slate-600 font-semibold mt-1">{campaignResultData.metrics[1].label}</p>
+                <h3 className="text-xl font-extrabold text-slate-950">{study.title}</h3>
+
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 my-2">
+                  {study.metrics.map((metric, mIdx) => (
+                    <div key={mIdx} className="p-4 rounded-2xl bg-orange-50/80 border border-orange-200/80 text-center">
+                      <metric.icon className="w-5 h-5 text-[#FF4500] mx-auto mb-1.5" />
+                      <p className="text-2xl sm:text-3xl font-extrabold text-slate-950">{metric.value}</p>
+                      <p className="text-[11px] text-slate-600 font-semibold mt-1 leading-tight">{metric.label}</p>
+                    </div>
+                  ))}
                 </div>
+
+                <p className="text-xs text-slate-600 leading-relaxed font-normal pt-1">
+                  {study.details}
+                </p>
               </div>
 
-              <p className="text-sm text-slate-600 leading-relaxed font-normal text-center pt-2">
-                {campaignResultData.details}
-              </p>
-            </div>
-
-            <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-              <span className="font-medium italic text-slate-400 text-center sm:text-left">{campaignResultData.footer}</span>
-              <button 
-                onClick={() => setCurrentPage('contact')} 
-                className="font-bold text-[#FF4500] hover:underline flex items-center gap-1 cursor-pointer shrink-0"
-              >
-                <span>Get My Free Reddit Strategy</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </Card>
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-4 text-xs text-slate-500">
+                <span className="font-semibold text-slate-400">7-Day Live Guarantee</span>
+                <button 
+                  onClick={() => setCurrentPage('contact')} 
+                  className="font-bold text-[#FF4500] hover:underline flex items-center gap-1 cursor-pointer shrink-0"
+                >
+                  <span>Get My Free Reddit Strategy</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </Card>
+          ))}
         </div>
+
+        <p className="text-center text-xs text-slate-400 italic">
+          More campaign case studies will be added as we complete additional client campaigns.
+        </p>
       </section>
 
 

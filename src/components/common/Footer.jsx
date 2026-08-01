@@ -37,7 +37,7 @@ export default function Footer({ setCurrentPage }) {
             </p>
             <div className="flex items-center gap-2 text-xs text-orange-400 font-medium bg-orange-950/40 border border-orange-800/40 px-3 py-1.5 rounded-full w-fit">
               <ShieldCheck className="w-4 h-4 text-[#FF4500]" />
-              <span>10-Day Live Guarantee Included</span>
+              <span>7-Day Live Guarantee Included</span>
             </div>
           </div>
 
@@ -104,7 +104,7 @@ export default function Footer({ setCurrentPage }) {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Reach4You Agency. Payment is based on Reddit posts and comments that remain live on Reddit for at least 10 days.</p>
+          <p>© {new Date().getFullYear()} Reach4You Agency. Payment is based on Reddit posts and comments that remain live on Reddit for at least 7 consecutive days.</p>
           <div className="flex items-center gap-6">
             <button onClick={() => setCurrentPage('about')} className="hover:text-slate-400 cursor-pointer">About Agency</button>
             <button onClick={() => setCurrentPage('contributor')} className="hover:text-slate-400 cursor-pointer">Become a Contributor</button>
