@@ -53,10 +53,9 @@ export default function Pricing({ setCurrentPage }) {
   ];
 
   const paymentTermsPoints = [
-    "50% advance payment is required before campaign execution begins.",
-    "The remaining 50% is payable after all agreed Reddit posts and comments remain live for at least 7 consecutive days.",
-    "If any agreed deliverable is removed within the guarantee period, Reach4You will replace it at no additional cost.",
-    "Campaign execution begins only after the advance payment has been received."
+    "20% advance payment is required to reserve and schedule your campaign.",
+    "The remaining 80% is payable after all agreed Reddit posts and comments remain live for at least 7 consecutive days.",
+    "If any agreed deliverable is removed within the 7-day guarantee period, Reach4You will replace it at no additional cost."
   ];
 
   return (
