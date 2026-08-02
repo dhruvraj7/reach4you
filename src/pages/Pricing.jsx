@@ -2,53 +2,104 @@ import React from 'react';
 import Badge from '../components/common/Badge';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
-import { Check, Flame, ArrowUpRight, Clock, ShieldCheck, Mail, FileText, CreditCard, Sparkles, Rocket } from 'lucide-react';
+import { 
+  Check, 
+  Flame, 
+  ArrowUpRight, 
+  Clock, 
+  ShieldCheck, 
+  Mail, 
+  FileText, 
+  CreditCard, 
+  Sparkles, 
+  Rocket,
+  Target,
+  Edit3,
+  Globe,
+  UserCheck,
+  BarChart3,
+  CheckCircle2
+} from 'lucide-react';
 
 export default function Pricing({ setCurrentPage }) {
   const pricingTiers = [
     {
-      name: 'Starter Reddit Campaign',
+      name: 'STARTER REDDIT CAMPAIGN',
       price: '$300',
       period: 'Per Campaign',
       tag: 'Starter Package',
-      desc: 'Ideal for early-stage SaaS tools, AI apps, and startups looking to launch their initial multi-subreddit presence.',
+      desc: 'Perfect for early-stage SaaS, AI startups, and tech companies looking to build their first authentic Reddit presence.',
       deliverables: [
-        '20 Reddit Posts & Comments',
+        'Up to 20 Reddit Placements',
         'Multi-Subreddit Distribution',
-        '30+ Active Reddit Contributors',
-        '100% Human Posting',
+        'Custom Content Creation',
+        'Human-Managed Campaign',
         '7-Day Live Guarantee'
       ]
     },
     {
-      name: 'Growth & Launch Campaign',
+      name: 'GROWTH & LAUNCH CAMPAIGN',
       price: '$500',
       period: 'Per Campaign',
       popular: true,
       tag: 'Most Popular',
-      desc: 'Designed for scaling startups, gaming projects, and products launching new features across targeted subreddits.',
+      desc: 'Ideal for growing startups, product launches, and brands looking to generate consistent Reddit discussions.',
       deliverables: [
-        '35 Reddit Posts & Comments',
+        'Up to 35 Reddit Placements',
         'Multi-Subreddit Distribution',
-        '40+ Active Reddit Contributors',
-        '100% Human Posting',
+        'Custom Content Creation',
+        'Campaign Performance Report',
+        'Human-Managed Campaign',
         '7-Day Live Guarantee'
       ]
     },
     {
-      name: 'Enterprise Reddit Campaign',
+      name: 'ENTERPRISE REDDIT CAMPAIGN',
       price: '$900',
       period: 'Per Campaign',
       tag: 'Maximum Impact',
-      desc: 'For high-volume brands and established companies seeking extensive multi-subreddit discussion coverage.',
+      desc: 'Designed for established brands requiring high-volume Reddit campaigns and maximum visibility.',
       deliverables: [
-        '70 Reddit Posts & Comments',
+        'Up to 70 Reddit Placements',
         'Multi-Subreddit Distribution',
-        '50+ Active Reddit Contributors',
         'Priority Campaign Execution',
-        '100% Human Posting',
+        'Weekly Performance Reports',
+        'Human-Managed Campaign',
         '7-Day Live Guarantee'
       ]
+    }
+  ];
+
+  const everyCampaignIncludes = [
+    {
+      title: 'Campaign Strategy',
+      desc: 'Tailored subreddit intelligence, audience intent mapping, and persona framing for your niche.',
+      icon: Target
+    },
+    {
+      title: 'Custom Content Creation',
+      desc: 'Authentic, problem-first posts and comments crafted to engage communities naturally.',
+      icon: Edit3
+    },
+    {
+      title: 'Multi-Subreddit Distribution',
+      desc: 'Strategic coverage across micro, mid-tier, and macro subreddits for maximum organic reach.',
+      icon: Globe
+    },
+    {
+      title: 'Human-Managed Execution',
+      desc: '100% human posting by vetted, high-karma Reddit contributors with zero bots or spam risk.',
+      icon: UserCheck
+    },
+    {
+      title: 'Performance Monitoring',
+      desc: 'Continuous tracking of thread health, engagement metrics, and Google SERP rankings.',
+      icon: BarChart3
+    },
+    {
+      title: '7-Day Live Guarantee',
+      desc: 'Complete financial protection: you only pay for content that stays live for at least 7 consecutive days.',
+      icon: ShieldCheck
     }
   ];
 
@@ -104,8 +155,8 @@ export default function Pricing({ setCurrentPage }) {
                   {tier.tag}
                 </span>
               </div>
-              <h2 className="text-2xl font-extrabold text-slate-950">{tier.name}</h2>
-              <p className="text-xs text-slate-500 mt-2 leading-relaxed font-normal">{tier.desc}</p>
+              <h2 className="text-xl font-extrabold text-slate-950 tracking-tight">{tier.name}</h2>
+              <p className="text-xs text-slate-500 mt-2 leading-relaxed font-normal min-h-[40px]">{tier.desc}</p>
               
               {/* Price Display */}
               <div className="my-6 p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-center">
@@ -138,8 +189,46 @@ export default function Pricing({ setCurrentPage }) {
         ))}
       </div>
 
+      {/* Every Campaign Includes Section */}
+      <section className="space-y-8 pt-4">
+        <div className="text-center max-w-2xl mx-auto space-y-2">
+          <Badge icon={Sparkles} variant="orange">Standard Infrastructure</Badge>
+          <h2 className="text-3xl font-extrabold text-slate-950 tracking-tight">
+            Every Campaign Includes
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 font-normal">
+            Every Reach4You tier is backed by our full growth stack and risk-free guarantee.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {everyCampaignIncludes.map((item, idx) => {
+            const IconComp = item.icon;
+            return (
+              <Card 
+                key={idx} 
+                className="p-6 bg-white border-slate-200/90 hover:border-[#FF4500] transition-all group space-y-3"
+              >
+                <div className="w-10 h-10 rounded-2xl bg-orange-50 text-[#FF4500] border border-orange-200/60 flex items-center justify-center font-bold group-hover:bg-[#FF4500] group-hover:text-white transition-colors">
+                  <IconComp className="w-5 h-5" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-base font-bold text-slate-950 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#FF4500] shrink-0" />
+                    <span>{item.title}</span>
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal pt-1">
+                    {item.desc}
+                  </p>
+                </div>
+              </Card>
+            );
+          })}
+        </div>
+      </section>
+
       {/* PAYMENT TERMS CARD */}
-      <section className="max-w-4xl mx-auto">
+      <section className="max-w-4xl mx-auto pt-4">
         <Card hover={false} className="p-8 sm:p-10 bg-white border-slate-200 shadow-xl rounded-3xl space-y-6">
           
           {/* Header */}
@@ -153,7 +242,7 @@ export default function Pricing({ setCurrentPage }) {
             </div>
           </div>
 
-          {/* 4 Bullet Points */}
+          {/* 3 Bullet Points */}
           <ul className="space-y-4">
             {paymentTermsPoints.map((point, pIdx) => (
               <li key={pIdx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">
@@ -188,3 +277,4 @@ export default function Pricing({ setCurrentPage }) {
     </div>
   );
 }
+
