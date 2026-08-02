@@ -26,7 +26,8 @@ import {
   Eye, 
   ThumbsUp, 
   FileCheck, 
-  MessageCircle 
+  MessageCircle,
+  Bot
 } from 'lucide-react';
 import Button from '../components/common/Button';
 import Badge from '../components/common/Badge';
@@ -211,6 +212,194 @@ export default function Home({ setCurrentPage }) {
               <CheckCircle2 className="w-4 h-4 text-[#FF4500]" />
               7-Day Live Guarantee
             </span>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* =========================================================================
+          NEW SECTION: WHY REDDIT MARKETING WORKS
+          ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-3xl bg-slate-950 text-white p-8 sm:p-12 lg:p-14 border border-slate-800/80 shadow-2xl space-y-12 overflow-hidden">
+          
+          {/* Subtle Orange Glow Ambient Background */}
+          <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-gradient-to-br from-[#FF4500]/20 via-orange-600/10 to-transparent blur-[140px] rounded-full pointer-events-none -z-10 animate-pulse-glow"></div>
+          <div className="absolute bottom-0 left-10 w-[450px] h-[250px] bg-[#FF4500]/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-950/80 border border-orange-800/60 text-[#FF4500] text-xs font-extrabold tracking-wide uppercase shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 fill-[#FF4500]" />
+              <span>Why Reddit Marketing Works</span>
+            </div>
+            
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              Why founders invest in Reddit marketing
+            </h2>
+            
+            <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
+              One authentic conversation can create immediate visibility, long-term Google traffic, and future AI citations.
+            </p>
+          </div>
+
+          {/* Cards Layout - 3 responsive cards in one row on desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+
+            {/* CARD 1: Engage on Reddit */}
+            <div className="relative bg-slate-900/90 border border-slate-800/90 hover:border-[#FF4500]/50 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover-lift transition-premium group shadow-lg overflow-hidden">
+              <div className="space-y-6">
+                
+                {/* Top Badge */}
+                <div>
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-orange-500/10 text-[#FF4500] border border-[#FF4500]/30 shadow-xs">
+                    <MessageSquare className="w-3.5 h-3.5" />
+                    <span>Engage on Reddit</span>
+                  </span>
+                </div>
+
+                {/* Visual: Reddit Discussion UI Mockup */}
+                <div className="bg-slate-950/90 rounded-2xl border border-slate-800/80 p-4 space-y-3 font-sans text-xs text-slate-300 shadow-inner">
+                  {/* Post Header */}
+                  <div className="flex items-center gap-2 text-[11px] text-slate-400">
+                    <div className="w-5 h-5 rounded-full bg-[#FF4500] flex items-center justify-center text-white font-bold text-[10px]">
+                      r/
+                    </div>
+                    <span className="font-semibold text-slate-200">r/SaaS</span>
+                    <span>•</span>
+                    <span>Posted by u/founder_jack</span>
+                  </div>
+
+                  {/* Founder Question */}
+                  <p className="font-semibold text-slate-100 text-sm leading-snug">
+                    "What tool are you using for a growing SaaS team?"
+                  </p>
+
+                  {/* Reddit Reply Box */}
+                  <div className="mt-3 pt-3 border-t border-slate-800/80">
+                    <div className="pl-3 border-l-2 border-[#FF4500]/70 space-y-1 bg-slate-900/60 p-2.5 rounded-r-xl">
+                      <div className="flex items-center gap-1.5 text-[10px] text-slate-400">
+                        <span className="font-bold text-slate-300">u/growth_lead</span>
+                        <span>•</span>
+                        <span className="text-[#FF4500] font-semibold">Top Answer</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        We've been using <span className="text-[#FF4500] font-bold bg-orange-950/80 px-1.5 py-0.5 rounded border border-orange-800/60">Your product</span> for our team and it streamlined our workflow completely. Highly recommend!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Heading & Description */}
+                <div>
+                  <h3 className="text-xl font-extrabold text-white group-hover:text-[#FF4500] transition-colors">
+                    Get discovered today.
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mt-2 font-normal">
+                    Your future customers are already asking for recommendations on Reddit. Authentic participation helps your brand become part of those conversations.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            {/* CARD 2: Rank on Google */}
+            <div className="relative bg-slate-900/90 border border-slate-800/90 hover:border-[#FF4500]/50 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover-lift transition-premium group shadow-lg overflow-hidden">
+              <div className="space-y-6">
+                
+                {/* Top Badge */}
+                <div>
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/30 shadow-xs">
+                    <Search className="w-3.5 h-3.5" />
+                    <span>Rank on Google</span>
+                  </span>
+                </div>
+
+                {/* Visual: Google Search Mockup */}
+                <div className="bg-slate-950/90 rounded-2xl border border-slate-800/80 p-4 space-y-3 shadow-inner">
+                  {/* Google Search Bar */}
+                  <div className="bg-slate-900 rounded-full border border-slate-800 px-3.5 py-1.5 flex items-center gap-2 text-[11px] text-slate-300">
+                    <Search className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                    <span className="truncate">best tool for growing saas team</span>
+                  </div>
+
+                  {/* Google Search Result Card */}
+                  <div className="space-y-1.5 pt-1">
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <span className="text-slate-400 font-mono text-[10px]">reddit.com/r/SaaS</span>
+                      <span className="px-1.5 py-0.2 rounded bg-emerald-500/15 text-emerald-400 text-[10px] font-bold border border-emerald-500/30">
+                        #1 Rank
+                      </span>
+                    </div>
+                    <div className="text-xs sm:text-sm font-semibold text-blue-400 hover:underline leading-snug">
+                      What tool are you using for a growing SaaS team? : r/SaaS
+                    </div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed line-clamp-2">
+                      Reddit discussion with 18+ responses: "We switched to <span className="text-[#FF4500] font-semibold">Your product</span> last month and..."
+                    </p>
+                  </div>
+                </div>
+
+                {/* Heading & Description */}
+                <div>
+                  <h3 className="text-xl font-extrabold text-white group-hover:text-[#FF4500] transition-colors">
+                    Keep getting traffic tomorrow.
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mt-2 font-normal">
+                    High-quality Reddit discussions often rank on Google, bringing qualified organic traffic long after the original conversation.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            {/* CARD 3: Get Mentioned by AI */}
+            <div className="relative bg-slate-900/90 border border-slate-800/90 hover:border-[#FF4500]/50 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover-lift transition-premium group shadow-lg overflow-hidden">
+              <div className="space-y-6">
+                
+                {/* Top Badge */}
+                <div>
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-purple-500/10 text-purple-400 border border-purple-500/30 shadow-xs">
+                    <Bot className="w-3.5 h-3.5" />
+                    <span>Get Mentioned by AI</span>
+                  </span>
+                </div>
+
+                {/* Visual: Modern AI Chat Interface */}
+                <div className="bg-slate-950/90 rounded-2xl border border-slate-800/80 p-4 space-y-3 shadow-inner">
+                  {/* User Question */}
+                  <div className="flex justify-end">
+                    <div className="bg-slate-800/90 text-slate-200 rounded-2xl rounded-tr-xs px-3 py-2 text-[11px] max-w-[85%] font-medium">
+                      "What software should I choose?"
+                    </div>
+                  </div>
+
+                  {/* AI Response */}
+                  <div className="bg-slate-900/90 border border-slate-800 rounded-2xl rounded-tl-xs p-3 space-y-2 text-[11px] text-slate-300">
+                    <div className="flex items-center gap-1.5 text-[10px] text-purple-400 font-semibold border-b border-slate-800/80 pb-1.5">
+                      <Sparkles className="w-3 h-3" />
+                      <span>Synthesizing Reddit discussions...</span>
+                    </div>
+                    <p className="leading-relaxed">
+                      Based on organic user feedback across Reddit, software founders frequently recommend <span className="text-[#FF4500] font-bold bg-orange-950/80 px-1.5 py-0.5 rounded border border-orange-800/60">Your product</span> for team efficiency.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Heading & Description */}
+                <div>
+                  <h3 className="text-xl font-extrabold text-white group-hover:text-[#FF4500] transition-colors">
+                    Become the recommendation.
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mt-2 font-normal">
+                    AI assistants increasingly use trusted online discussions when answering buying questions. Helpful Reddit conversations can continue influencing future recommendations.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
           </div>
 
         </div>
