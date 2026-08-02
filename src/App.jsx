@@ -125,6 +125,10 @@ export default function App() {
     }
 
     const fullUrl = `${baseUrl}${currentSeo.path}`;
+    const defaultImage = `${baseUrl}/og-image.png`;
+    const imageUrl = currentSeo.image
+      ? (currentSeo.image.startsWith('http') ? currentSeo.image : `${baseUrl}${currentSeo.image}`)
+      : defaultImage;
 
     document.title = currentSeo.title;
 
@@ -143,11 +147,20 @@ export default function App() {
     let ogUrl = document.getElementById('og-url');
     if (ogUrl) ogUrl.setAttribute('content', fullUrl);
 
+    let ogImage = document.getElementById('og-image');
+    if (ogImage) ogImage.setAttribute('content', imageUrl);
+
+    let ogImageSecure = document.getElementById('og-image-secure');
+    if (ogImageSecure) ogImageSecure.setAttribute('content', imageUrl);
+
     let twTitle = document.getElementById('twitter-title');
     if (twTitle) twTitle.setAttribute('content', currentSeo.title);
 
     let twDesc = document.getElementById('twitter-desc');
     if (twDesc) twDesc.setAttribute('content', currentSeo.description);
+
+    let twImage = document.getElementById('twitter-image');
+    if (twImage) twImage.setAttribute('content', imageUrl);
 
     // Dynamic Schema Injection for BlogPosting / Article
     let existingSchemaScript = document.getElementById('dynamic-page-schema');
