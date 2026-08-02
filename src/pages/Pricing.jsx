@@ -25,7 +25,7 @@ export default function Pricing({ setCurrentPage }) {
   const pricingTiers = [
     {
       name: 'STARTER REDDIT CAMPAIGN',
-      price: '$300',
+      price: '$200',
       period: 'Per Campaign',
       tag: 'Starter Package',
       desc: 'Perfect for early-stage SaaS, AI startups, and tech companies looking to build their first authentic Reddit presence.',
@@ -39,7 +39,7 @@ export default function Pricing({ setCurrentPage }) {
     },
     {
       name: 'GROWTH & LAUNCH CAMPAIGN',
-      price: '$500',
+      price: '$400',
       period: 'Per Campaign',
       popular: true,
       tag: 'Most Popular',
@@ -55,7 +55,7 @@ export default function Pricing({ setCurrentPage }) {
     },
     {
       name: 'ENTERPRISE REDDIT CAMPAIGN',
-      price: '$900',
+      price: '$800',
       period: 'Per Campaign',
       tag: 'Maximum Impact',
       desc: 'Designed for established brands requiring high-volume Reddit campaigns and maximum visibility.',
@@ -123,15 +123,15 @@ export default function Pricing({ setCurrentPage }) {
         </p>
       </div>
 
-      {/* Founder Pricing Banner */}
-      <div className="max-w-3xl mx-auto p-6 rounded-3xl bg-slate-900/90 border border-orange-500/30 text-white text-center space-y-2 shadow-xl backdrop-blur-md relative overflow-hidden">
+      {/* Founding Client Pricing Banner */}
+      <div className="max-w-3xl mx-auto p-6 rounded-3xl bg-slate-900/90 border border-orange-500/30 text-white text-center space-y-3 shadow-xl backdrop-blur-md relative overflow-hidden">
         <div className="absolute top-0 right-0 w-48 h-48 bg-[#FF4500]/10 blur-2xl rounded-full pointer-events-none"></div>
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-950/80 text-[#FF4500] border border-orange-800/60 text-xs font-extrabold uppercase tracking-wide">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-950/80 text-[#FF4500] border border-orange-800/60 text-xs font-extrabold uppercase tracking-wide">
           <Rocket className="w-3.5 h-3.5 text-[#FF4500]" />
-          <span>🚀 Founder Pricing</span>
+          <span>🚀 Founding Client Pricing</span>
         </div>
-        <p className="text-xs sm:text-sm text-slate-300 font-medium max-w-xl mx-auto leading-relaxed pt-1">
-          For a limited time, early clients receive discounted campaign pricing while we continue expanding our portfolio and case studies.
+        <p className="text-xs sm:text-sm text-slate-300 font-medium max-w-xl mx-auto leading-relaxed">
+          We're currently accepting a limited number of founding clients at introductory pricing while we expand our portfolio. Existing clients will keep their pricing even after future increases.
         </p>
       </div>
 

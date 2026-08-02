@@ -839,7 +839,7 @@ export const BLOG_POSTS = [
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
   <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
     <span class="text-xs font-bold text-[#FF4500] uppercase tracking-wider">Starter Campaign</span>
-    <h4 class="text-xl font-extrabold text-slate-900">$300 <span class="text-xs font-normal text-slate-500">/ campaign</span></h4>
+    <h4 class="text-xl font-extrabold text-slate-900">$200 <span class="text-xs font-normal text-slate-500">/ campaign</span></h4>
     <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
       <li>• 5 Multi-thread placements</li>
       <li>• Subreddit Mapping & Copywriting</li>
@@ -851,7 +851,7 @@ export const BLOG_POSTS = [
   <div class="p-6 rounded-2xl bg-white border-2 border-[#FF4500] shadow-md space-y-3 relative">
     <div class="absolute -top-3 right-4 bg-[#FF4500] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Most Popular</div>
     <span class="text-xs font-bold text-[#FF4500] uppercase tracking-wider">Growth & Launch</span>
-    <h4 class="text-xl font-extrabold text-slate-900">$500 <span class="text-xs font-normal text-slate-500">/ campaign</span></h4>
+    <h4 class="text-xl font-extrabold text-slate-900">$400 <span class="text-xs font-normal text-slate-500">/ campaign</span></h4>
     <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
       <li>• 10 High-Intent Placements</li>
       <li>• Google SERP Keyword Targeting</li>
@@ -862,7 +862,7 @@ export const BLOG_POSTS = [
 
   <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
     <span class="text-xs font-bold text-[#FF4500] uppercase tracking-wider">Enterprise Scale</span>
-    <h4 class="text-xl font-extrabold text-slate-900">$900 <span class="text-xs font-normal text-slate-500">/ campaign</span></h4>
+    <h4 class="text-xl font-extrabold text-slate-900">$800 <span class="text-xs font-normal text-slate-500">/ campaign</span></h4>
     <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
       <li>• 20 Multi-thread Placements</li>
       <li>• Full SERP Takeover Strategy</li>
@@ -1020,7 +1020,7 @@ export const BLOG_POSTS = [
   <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
     <h3 class="text-base font-bold text-slate-900 mb-2">Q3: How much do professional Reddit marketing services cost?</h3>
     <p class="text-xs text-slate-600 leading-relaxed">
-      At Reach4You, campaign packages start at $300 for entry Starter pushes, $500 for Growth & Launch campaigns, and $900 for Enterprise scale. Every tier includes strategy mapping, contributor placement, and our 7-Day Live Guarantee.
+      At Reach4You, campaign packages start at $200 for entry Starter pushes, $400 for Growth & Launch campaigns, and $800 for Enterprise scale. Every tier includes strategy mapping, contributor placement, and our 7-Day Live Guarantee.
     </p>
   </div>
 
@@ -1252,7 +1252,7 @@ export const BLOG_POSTS = [
     <span class="text-xs font-bold text-[#FF4500] uppercase tracking-wider">Model 1</span>
     <h4 class="text-lg font-bold text-slate-900">Campaign Tiers</h4>
     <p class="text-xs text-slate-600 leading-relaxed">
-      Fixed campaign pricing per project (e.g., $300 - $900 per campaign). Ideal for product launches, targeted Reddit SEO pushes, and testing channel ROI without long contracts.
+      Fixed campaign pricing per project (e.g., $200 - $800 per campaign). Ideal for product launches, targeted Reddit SEO pushes, and testing channel ROI without long contracts.
     </p>
   </div>
 
@@ -1344,7 +1344,7 @@ export const BLOG_POSTS = [
   <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
     <h3 class="text-base font-bold text-slate-900 mb-2">Q1: How much does a Reddit marketing agency cost?</h3>
     <p class="text-xs text-slate-600 leading-relaxed">
-      Pricing varies based on campaign scope. Specialized campaign packages at Reach4You start at $300 per campaign for entry-level pushes, $500 for launch campaigns, and $900 for multi-thread enterprise scale. Every package includes full strategy mapping, content creation, and our 7-Day Live Guarantee.
+      Pricing varies based on campaign scope. Specialized campaign packages at Reach4You start at $200 per campaign for entry-level pushes, $400 for launch campaigns, and $800 for multi-thread enterprise scale. Every package includes full strategy mapping, content creation, and our 7-Day Live Guarantee.
     </p>
   </div>
 

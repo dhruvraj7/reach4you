@@ -9,13 +9,13 @@ export default function Contact() {
     fullName: '',
     workEmail: '',
     companyName: '',
-    selectedPackage: 'Starter Reddit Campaign ($300 Per Campaign)',
+    selectedPackage: 'Starter Reddit Campaign ($200 Per Campaign)',
     additionalNotes: ''
   });
 
   const howItWorksSteps = [
     { num: '①', title: 'Tell us about your product', desc: 'Share your business details and campaign notes with our team.' },
-    { num: '②', title: 'Choose your package', desc: 'Select Starter ($300), Growth ($500), or Enterprise ($900).' },
+    { num: '②', title: 'Choose your package', desc: 'Select Starter ($200), Growth ($400), or Enterprise ($800).' },
     { num: '③', title: 'We review your requirements', desc: 'We carefully evaluate relevant subreddits of all sizes for your niche.' },
     { num: '④', title: 'We contact you within 24 hours', desc: 'Our team delivers your custom Reddit campaign roadmap.' },
   ];
@@ -176,9 +176,9 @@ export default function Contact() {
                     onChange={(e) => setFormData({ ...formData, selectedPackage: e.target.value })}
                     className="w-full px-4 py-3.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-[#FF4500]/30 bg-white font-bold text-slate-900 cursor-pointer shadow-xs"
                   >
-                    <option value="Starter Reddit Campaign ($300 Per Campaign)">Starter Reddit Campaign ($300 Per Campaign)</option>
-                    <option value="Growth & Launch Campaign ($500 Per Campaign)">Growth & Launch Campaign ($500 Per Campaign)</option>
-                    <option value="Enterprise Reddit Campaign ($900 Per Campaign)">Enterprise Reddit Campaign ($900 Per Campaign)</option>
+                    <option value="Starter Reddit Campaign ($200 Per Campaign)">Starter Reddit Campaign ($200 Per Campaign)</option>
+                    <option value="Growth & Launch Campaign ($400 Per Campaign)">Growth & Launch Campaign ($400 Per Campaign)</option>
+                    <option value="Enterprise Reddit Campaign ($800 Per Campaign)">Enterprise Reddit Campaign ($800 Per Campaign)</option>
                   </select>
                 </div>
 
