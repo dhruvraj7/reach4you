@@ -56,10 +56,10 @@ export default function App() {
 
   // Dynamic SEO Controller
   useEffect(() => {
-    const baseUrl = 'https://reach4you.agency';
+    const baseUrl = 'https://reach4you.vercel.app';
     let currentSeo = {
       title: 'Reach4You | Dedicated Reddit Marketing Agency',
-      description: 'Reach4You helps startups, SaaS, AI, gaming, and ecommerce brands grow through authentic Reddit posts and comments across multiple subreddits. Powered by 50+ vetted contributors.',
+      description: 'Authentic Reddit marketing campaigns for SaaS, AI, Gaming, Tech, and E-commerce brands powered by 50+ vetted Reddit contributors.',
       path: '/'
     };
 
@@ -86,7 +86,7 @@ export default function App() {
       const seoData = {
         home: {
           title: 'Reach4You | Dedicated Reddit Marketing Agency',
-          description: 'Reach4You helps startups, SaaS, AI, gaming, and ecommerce brands grow through authentic Reddit posts and comments across multiple subreddits. Powered by 50+ vetted contributors.',
+          description: 'Authentic Reddit marketing campaigns for SaaS, AI, Gaming, Tech, and E-commerce brands powered by 50+ vetted Reddit contributors.',
           path: '/'
         },
         services: {
@@ -187,7 +187,7 @@ export default function App() {
           "name": "Reach4You",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://reach4you.agency/favicon.svg"
+            "url": "https://reach4you.vercel.app/favicon.svg"
           }
         },
         "mainEntityOfPage": {

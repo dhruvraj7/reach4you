@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://reach4you.agency/sitemap.xml
+Sitemap: https://reach4you.vercel.app/sitemap.xml
