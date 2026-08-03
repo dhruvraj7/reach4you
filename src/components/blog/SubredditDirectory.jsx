@@ -28,7 +28,8 @@ import {
   ChevronUp,
   FileText,
   Bookmark,
-  Share2
+  Share2,
+  Download
 } from 'lucide-react';
 
 export default function SubredditDirectory({ setCurrentPage }) {
@@ -38,6 +39,16 @@ export default function SubredditDirectory({ setCurrentPage }) {
   const [copiedId, setCopiedId] = useState(null);
   const [expandedId, setExpandedId] = useState(null);
   const [activeFaq, setActiveFaq] = useState(null);
+
+  const handleDownloadPdf = () => {
+    const pdfUrl = '/Ultimate-300-Subreddits-Directory-2026.pdf';
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'Ultimate-300-Subreddits-Directory-2026.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   // Copy link handler
   const handleCopyLink = (link, id) => {
@@ -143,6 +154,19 @@ export default function SubredditDirectory({ setCurrentPage }) {
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-4xl font-normal">
             Welcome to the internet's most exhaustive, data-backed directory of active Reddit communities. Engineered specifically for SaaS founders, AI developers, marketers, indie hackers, and agency growth teams seeking authentic, spam-free organic customer acquisition.
           </p>
+
+          <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+            <button
+              onClick={handleDownloadPdf}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl font-extrabold text-xs text-white bg-[#FF4500] hover:bg-[#E03D00] shadow-xl shadow-[#FF4500]/30 hover:shadow-2xl transition-all cursor-pointer"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download PDF Directory Report (28 Pages)</span>
+            </button>
+            <span className="text-xs text-slate-400">
+              ✓ Includes all 21 categories, karma rules, posting times, & strategy tips
+            </span>
+          </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80 text-xs">
             <div className="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
@@ -836,6 +860,19 @@ export default function SubredditDirectory({ setCurrentPage }) {
                   <span className="text-slate-200">{item}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-800/80">
+              <div className="text-xs text-slate-300">
+                Want to keep this complete 300+ directory offline? Download the official A4 PDF report.
+              </div>
+              <button
+                onClick={handleDownloadPdf}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl font-extrabold text-xs text-slate-950 bg-white hover:bg-slate-100 shadow-xl transition-all cursor-pointer"
+              >
+                <Download className="w-4 h-4 text-[#FF4500]" />
+                <span>Download Complete PDF Report (28 Pages)</span>
+              </button>
             </div>
           </div>
         </section>
