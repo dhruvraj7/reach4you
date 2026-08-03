@@ -170,13 +170,13 @@ export default function App() {
 
     if (currentSeo.postData) {
       const p = currentSeo.postData;
-      const schemaData = {
+      const articleSchema = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
+        "@type": "Article",
         "headline": p.title,
         "description": p.excerpt,
         "image": p.featuredImage,
-        "datePublished": p.publishDate,
+        "datePublished": "2026-08-03",
         "author": {
           "@type": "Person",
           "name": p.author.name,
@@ -195,10 +195,68 @@ export default function App() {
           "@id": fullUrl
         }
       };
+
+      const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://reach4you.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://reach4you.vercel.app/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": p.title,
+            "item": fullUrl
+          }
+        ]
+      };
+
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is organic Reddit marketing effective for B2B SaaS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. B2B decision-makers actively use specialized subreddits like r/SaaS, r/devops, and r/marketing to discover tools and evaluate peer reviews."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many subreddits should a startup focus on initially?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Focus on 3 to 5 core subreddits where your target buyer persona is most active rather than posting across dozens of unrelated communities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I post my product link directly in Reddit posts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Direct link posts are heavily filtered by AutoModerator. Write a comprehensive, value-first text post and introduce your product URL in the comments or bio."
+            }
+          }
+        ]
+      };
+
+      const combinedSchema = [articleSchema, breadcrumbSchema, faqSchema];
       const script = document.createElement('script');
       script.id = 'dynamic-page-schema';
       script.type = 'application/ld+json';
-      script.text = JSON.stringify(schemaData);
+      script.text = JSON.stringify(combinedSchema);
       document.head.appendChild(script);
     }
 

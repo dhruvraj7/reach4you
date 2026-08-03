@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Badge from '../components/common/Badge';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
+import SubredditDirectory from '../components/blog/SubredditDirectory';
 import { 
   BLOG_POSTS, 
   getPostBySlug, 
@@ -157,36 +158,40 @@ export default function BlogPost({ slug, setCurrentPage }) {
         </div>
       )}
 
-      {/* Article Content Sections */}
-      <article 
-        onClick={(e) => {
-          const target = e.target.closest('a');
-          if (target) {
-            const href = target.getAttribute('href');
-            if (href && href.startsWith('/')) {
-              e.preventDefault();
-              const pageKey = href.replace(/^\//, '');
-              if (typeof setCurrentPage === 'function') {
-                setCurrentPage(pageKey || 'home');
+      {/* Article Content Sections / Directory Component */}
+      {post.isInteractiveDirectory ? (
+        <SubredditDirectory setCurrentPage={setCurrentPage} />
+      ) : (
+        <article 
+          onClick={(e) => {
+            const target = e.target.closest('a');
+            if (target) {
+              const href = target.getAttribute('href');
+              if (href && href.startsWith('/')) {
+                e.preventDefault();
+                const pageKey = href.replace(/^\//, '');
+                if (typeof setCurrentPage === 'function') {
+                  setCurrentPage(pageKey || 'home');
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }
-          }
-        }}
-        className="prose prose-slate max-w-none space-y-8 text-slate-800 leading-relaxed font-normal"
-      >
-        {post.sections && post.sections.map((sec, idx) => (
-          <section key={idx} className="space-y-3 pt-2">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
-              {sec.heading}
-            </h2>
-            <div 
-              dangerouslySetInnerHTML={{ __html: sec.content }} 
-              className="text-base text-slate-700 leading-relaxed space-y-4"
-            />
-          </section>
-        ))}
-      </article>
+          }}
+          className="prose prose-slate max-w-none space-y-8 text-slate-800 leading-relaxed font-normal"
+        >
+          {post.sections && post.sections.map((sec, idx) => (
+            <section key={idx} className="space-y-3 pt-2">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
+                {sec.heading}
+              </h2>
+              <div 
+                dangerouslySetInnerHTML={{ __html: sec.content }} 
+                className="text-base text-slate-700 leading-relaxed space-y-4"
+              />
+            </section>
+          ))}
+        </article>
+      )}
 
       {/* Author Bio Card */}
       <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
