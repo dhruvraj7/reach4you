@@ -1,48 +1,5 @@
 export const BLOG_POSTS = [
   {
-    id: 'ultimate-300-subreddits-directory-2026',
-    slug: 'ultimate-300-subreddits-directory-2026',
-    title: 'The Ultimate Directory of 300+ Active Subreddits for SaaS, AI, Startups, Marketing, Gaming & Tech (2026)',
-    excerpt: 'The definitive 2026 directory of 300+ active subreddits across 21 categories including SaaS, AI, Startups, Marketing, SEO, Gaming, and Tech. Complete with member counts, posting rules, karma requirements, optimal posting times, anti-ban protocols, and interactive search.',
-    category: 'Reddit Directory',
-    categorySlug: 'reddit-directory',
-    author: {
-      name: 'Alex Rivera',
-      role: 'Head of Reddit Strategy at Reach4You',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250',
-      bio: 'Alex Rivera is the Head of Reddit Strategy at Reach4You, specializing in authentic Reddit marketing, subreddit research, Reddit SEO, community growth, and organic customer acquisition for SaaS, AI startups, gaming studios, ecommerce brands, and technology companies.'
-    },
-    publishDate: 'August 3, 2026',
-    readTime: '45 min read',
-    featuredImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1200',
-    isInteractiveDirectory: true,
-    tags: [
-      'reddit marketing',
-      'reddit seo',
-      'best subreddits',
-      'saas subreddits',
-      'ai subreddits',
-      'startup subreddits',
-      'reddit marketing guide',
-      'reddit marketing strategy',
-      'reddit communities',
-      'reddit growth'
-    ],
-    seo: {
-      metaTitle: 'Ultimate Directory of 300+ Active Subreddits (2026 Guide)',
-      metaDescription: 'Discover 300+ active subreddits for SaaS, AI, Startups, Marketing, Gaming & Tech. Includes karma rules, posting times, anti-ban protocols & interactive search.',
-      keywords: 'reddit marketing, reddit seo, best subreddits, saas subreddits, ai subreddits, startup subreddits, reddit marketing guide, reddit marketing strategy, reddit communities, reddit growth, b2b subreddits, tech subreddits, developer subreddits, gamedev subreddits'
-    },
-    keyTakeaways: [
-      '300+ active subreddits organized across 21 core categories with verified member counts, karma requirements, and posting rules.',
-      'Google core search algorithms and Generative AI engines (ChatGPT, Perplexity, Claude) prioritize high-engagement Reddit threads on Page 1.',
-      'Matching your product angle to exact subreddit culture and sidebar rules is essential to prevent AutoModerator bans and maximize upvotes.',
-      'Interactive live search and 21-category filters allow marketers and founders to instantly discover high-intent buyer communities.',
-      'Includes proven post copywriting templates, customer discovery search operators, and a 10-step master execution checklist.'
-    ],
-    sections: []
-  },
-  {
     id: 'why-reddit-marketing-is-essential-2026',
     slug: 'why-reddit-marketing-is-essential-2026',
     title: 'Why Reddit Marketing Is Essential for Modern Brands in 2026',

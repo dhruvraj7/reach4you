@@ -172,11 +172,11 @@ export default function App() {
       const p = currentSeo.postData;
       const articleSchema = {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         "headline": p.title,
         "description": p.excerpt,
         "image": p.featuredImage,
-        "datePublished": "2026-08-03",
+        "datePublished": p.publishDate,
         "author": {
           "@type": "Person",
           "name": p.author.name,
@@ -221,38 +221,7 @@ export default function App() {
         ]
       };
 
-      const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is organic Reddit marketing effective for B2B SaaS?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. B2B decision-makers actively use specialized subreddits like r/SaaS, r/devops, and r/marketing to discover tools and evaluate peer reviews."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How many subreddits should a startup focus on initially?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Focus on 3 to 5 core subreddits where your target buyer persona is most active rather than posting across dozens of unrelated communities."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I post my product link directly in Reddit posts?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Direct link posts are heavily filtered by AutoModerator. Write a comprehensive, value-first text post and introduce your product URL in the comments or bio."
-            }
-          }
-        ]
-      };
-
-      const combinedSchema = [articleSchema, breadcrumbSchema, faqSchema];
+      const combinedSchema = [articleSchema, breadcrumbSchema];
       const script = document.createElement('script');
       script.id = 'dynamic-page-schema';
       script.type = 'application/ld+json';
@@ -270,6 +239,10 @@ export default function App() {
     if (currentPage === 'blog') return <Blog setCurrentPage={setCurrentPage} />;
     if (currentPage.startsWith('blog/')) {
       const slug = currentPage.replace('blog/', '');
+      const post = getPostBySlug(slug);
+      if (!post) {
+        return <Blog setCurrentPage={setCurrentPage} />;
+      }
       return <BlogPost slug={slug} setCurrentPage={setCurrentPage} />;
     }
     if (currentPage === 'contributor') return <Contributor setCurrentPage={setCurrentPage} />;
